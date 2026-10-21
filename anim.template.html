@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;position:relative;
+  background:linear-gradient(165deg,#0B1526 0%,#122240 55%,#0B1526 100%);
+  color:#EAF2FF;font-family:'Microsoft YaHei','PingFang SC',sans-serif}
+.scene{position:absolute;inset:0;display:none;padding:100px 80px}
+.scene.on{display:flex;flex-direction:column;justify-content:center;zoom:1.42}
+#s1.on{zoom:1.22}
+#s0.on{zoom:1.26}
+#s3.on{zoom:1.02}
+#s5.on{zoom:1.22}
+.cyan{color:#38E1D4}.blue{color:#5FA8FF}.amber{color:#FFC857}.red{color:#FF8A5C}
+.kick{font-size:34px;letter-spacing:6px;color:#8FA9D9;margin-bottom:40px}
+.corner{position:absolute;top:70px;left:90px;font-size:28px;letter-spacing:4px;color:#5FA8FF;font-weight:600}
+.pbar{position:absolute;bottom:0;left:0;height:10px;background:linear-gradient(90deg,#2E61DD,#38E1D4)}
+.card{background:#16294A;border-radius:24px}
+.fade{opacity:0;transform:translateY(40px);transition:none}
+</style>
+</head>
+<body>
+<div class="corner">ANIM FORGE · DEMO</div>
+<div class="pbar" id="pbar"></div>
+
+<!-- S1 钩子 0-5.2 -->
+<div class="scene" id="s0">
+  <div>
+    <div class="kick">PURPOSE BUILT · 60 SECONDS</div>
+    <div style="font-size:120px;font-weight:900;line-height:1.25" id="s1t">把一篇长文<br>讲成<br><span class="cyan">60 秒</span></div>
+    <div style="margin-top:70px;font-size:44px;line-height:1.7;color:#B9C9E8" id="s1s">不用剪辑软件，不用素材库<br>一个 HTML 文件就是全部时间轴</div>
+    <div style="margin-top:60px;font-size:30px;color:#5B729B" id="s1n">代码渲染 · 帧帧确定 · 可局部重渲</div>
+  </div>
+</div>
+
+<!-- S2 时间线 5.2-20 -->
+<div class="scene" id="s1">
+  <div class="kick">整条流水线，三步</div>
+  <div style="display:flex;flex-direction:column;gap:34px" id="tl"></div>
+</div>
+
+<!-- S3 三层合作 20-34 -->
+<div class="scene" id="s2">
+  <div class="kick">为什么是代码渲染，不是剪辑</div>
+  <div style="display:flex;flex-direction:column;gap:40px">
+    <div class="card fade" style="padding:50px 46px;border:3px solid #5FA8FF"><div style="font-size:46px;font-weight:800"><span class="blue">1</span> 时间轴即<span class="cyan">纯函数</span></div><div style="font-size:34px;color:#B9C9E8;margin-top:20px">?t=12.5 永远渲染出同一帧，改一幕只重渲一幕</div></div>
+    <div class="card fade" style="padding:50px 46px;border:3px solid #5FA8FF"><div style="font-size:46px;font-weight:800"><span class="blue">2</span> 无头浏览器<span class="cyan">逐帧截图</span></div><div style="font-size:34px;color:#B9C9E8;margin-top:20px">Edge/Chrome headless，15fps × 900 帧</div></div>
+    <div class="card fade" style="padding:50px 46px;border:3px solid #38E1D4"><div style="font-size:46px;font-weight:800"><span class="cyan">3</span> ffmpeg <span class="cyan">一次合成</span></div><div style="font-size:34px;color:#B9C9E8;margin-top:20px">口播按锚点对齐 · BGM 压底 · 限幅器防爆音</div></div>
+  </div>
+  <div style="margin-top:56px;font-size:34px;color:#FFC857" id="s3n">改文案不重拍，改版式不重录</div>
+</div>
+
+<!-- S4 差距账 34-45 -->
+<div class="scene" id="s3">
+  <div class="kick">成本账也要算清</div>
+  <div>
+    <div style="font-size:38px;color:#B9C9E8;margin-bottom:26px">一条 60 秒成片的制作耗时</div>
+    <div style="height:96px;background:#16294A;border-radius:48px;overflow:hidden;margin-bottom:50px"><div id="b1" style="height:100%;width:0;background:linear-gradient(90deg,#D98324,#FFC857);display:flex;align-items:center;justify-content:flex-end;padding-right:40px;font-size:52px;font-weight:900;color:#241300">手剪 ≈ 120min</div></div>
+    <div style="height:96px;background:#16294A;border-radius:48px;overflow:hidden;margin-bottom:36px"><div id="b2" style="height:100%;width:0;background:linear-gradient(90deg,#2E61DD,#38E1D4)"></div></div>
+    <div style="font-size:32px;color:#8FA9D9" id="b2n">本工序 ≈ 25min（大部分是无头渲染的挂机时间）</div>
+  </div>
+  <div style="display:flex;gap:36px;margin-top:56px">
+    <div class="card" style="flex:1;padding:40px;text-align:center;min-width:0"><div style="font-size:72px;font-weight:900;color:#38E1D4" id="c1">0</div><div style="font-size:28px;color:#8FA9D9;margin-top:14px">第三方视频依赖</div></div>
+    <div class="card" style="flex:1;padding:40px;text-align:center;min-width:0"><div style="font-size:72px;font-weight:900;color:#38E1D4" id="c2">0</div><div style="font-size:28px;color:#8FA9D9;margin-top:14px">素材版权风险（BGM 代码合成）</div></div>
+  </div>
+  <div style="margin-top:56px;font-size:36px;color:#FF8A5C" id="s4n">失败帧删掉重渲即可，不用从头来</div>
+</div>
+
+<!-- S5 账本 45-55 -->
+<div class="scene" id="s4">
+  <div class="kick">一条成片的构成</div>
+  <div style="display:flex;gap:34px">
+    <div class="card" style="flex:1;padding:52px 40px;text-align:center"><div style="font-size:80px;font-weight:900;color:#5FA8FF" id="n1">900</div><div style="font-size:30px;color:#8FA9D9;margin-top:16px">帧 PNG<br>15fps × 60s</div></div>
+    <div class="card" style="flex:1;padding:52px 40px;text-align:center"><div style="font-size:80px;font-weight:900;color:#FF8A5C" id="n2">6</div><div style="font-size:30px;color:#8FA9D9;margin-top:16px">段口播<br>锚点对齐</div></div>
+  </div>
+  <div style="display:flex;gap:34px;margin-top:40px">
+    <div class="card" style="flex:1;padding:52px 40px;text-align:center"><div style="font-size:80px;font-weight:900;color:#38E1D4">1</div><div style="font-size:30px;color:#8FA9D9;margin-top:16px">个 HTML<br>承载全部时间轴</div></div>
+    <div class="card" style="flex:1;padding:52px 40px;text-align:center"><div style="font-size:80px;font-weight:900;color:#38E1D4">0</div><div style="font-size:30px;color:#8FA9D9;margin-top:16px">剪辑软件<br>与素材库</div></div>
+  </div>
+  <div style="margin-top:56px;border-left:8px solid #38E1D4;padding:36px 40px;background:#0F1E38;border-radius:16px;font-size:36px;line-height:1.8" class="fade" id="s5q">「画面是纯函数，<br>时间才是唯一的输入。」</div>
+</div>
+
+<!-- S6 三问+CTA 55-60 -->
+<div class="scene" id="s5">
+  <div>
+    <div style="font-size:88px;font-weight:900;line-height:1.4">开源在 <span class="cyan">GitHub</span><br>搜 anim-forge</div>
+    <div style="margin-top:60px;font-size:42px;line-height:1.9;color:#B9C9E8">模板 · 渲染 · TTS · BGM · 合成<br>一条命令跑通</div>
+    <div style="margin-top:110px;font-size:56px;font-weight:800">Star 一个，<span class="cyan">造你的第一条</span></div>
+  </div>
+</div>
+
+<script>
+// CUTS 与 config.json 的 cuts 保持一致
+const CUTS = [0, 5.2, 20, 34, 45, 55, 60];
+const qs = new URLSearchParams(location.search);
+const t = parseFloat(qs.get("t") || "0");
+
+let si = 0;
+for (let i = 0; i < CUTS.length - 1; i++) if (t >= CUTS[i]) si = i;
+for (let i = 0; i < 6; i++) document.getElementById("s" + i).classList.toggle("on", i === si);
+document.getElementById("pbar").style.width = (t / 60 * 100) + "%";
+
+const lt = t - CUTS[si];
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : (1 - Math.pow(1 - x, 3));
+
+if (si === 0) {
+  const k = ease(lt / 0.9);
+  const el = document.getElementById("s1t");
+  el.style.opacity = k; el.style.transform = `translateY(${(1-k)*60}px)`;
+  document.getElementById("s1s").style.opacity = ease((lt - 0.6) / 0.8);
+  document.getElementById("s1n").style.opacity = ease((lt - 1.4) / 0.8);
+}
+
+if (si === 1) {
+  const rows = [
+    ["第 1 步", "写 anim.html：每幕一个 <div>，动画逻辑查 ?t= 参数", "#5FA8FF"],
+    ["第 2 步", "render_frames.py：无头浏览器逐帧截图", "#5FA8FF"],
+    ["第 3 步", "gen_voice + make_bgm + mix_final：合成成片", "#38E1D4"]];
+  const host = document.getElementById("tl");
+  rows.forEach((r, i) => {
+    const on = ease((lt - 0.4 - i * 1.6) / 0.5);
+    const hot = i === 2;
+    host.insertAdjacentHTML("beforeend",
+      `<div style="display:flex;gap:30px;align-items:center;opacity:${on};transform:translateY(${(1-on)*40}px)">
+        <div style="width:230px;font-size:38px;font-weight:800;color:${r[2]}">${r[0]}</div>
+        <div style="flex:1;background:${hot?'#0F1E38':'#16294A'};border-radius:18px;padding:34px 38px;font-size:36px;line-height:1.55;${hot?'border:3px solid #38E1D4':''}">${r[1]}</div>
+      </div>`);
+  });
+}
+
+if (si === 2) {
+  const cards = document.querySelectorAll("#s2 .fade");
+  cards.forEach((c, i) => {
+    const k = ease((lt - 0.5 - i * 2.2) / 0.6);
+    c.style.opacity = k; c.style.transform = `translateY(${(1-k)*50}px)`;
+  });
+  document.getElementById("s3n").style.opacity = ease((lt - 7.5) / 0.6);
+}
+
+if (si === 3) {
+  document.getElementById("b1").style.width = (ease((lt - 0.4) / 1.2) * 100) + "%";
+  document.getElementById("b2").style.width = (ease((lt - 1.8) / 1.0) * 21) + "%";
+  document.getElementById("b2n").style.opacity = ease((lt - 3.0) / 0.6);
+  const n1 = Math.round(ease((lt - 4.5) / 1.2) * 0);
+  const n2 = Math.round(ease((lt - 5.5) / 1.4) * 0);
+  document.getElementById("c1").textContent = n1.toLocaleString();
+  document.getElementById("c2").textContent = n2.toLocaleString();
+  document.getElementById("s4n").style.opacity = ease((lt - 7.5) / 0.6);
+}
+
+if (si === 4) {
+  const k1 = ease((lt - 0.5) / 0.6);
+  document.getElementById("n1").textContent = Math.round(ease((lt - 0.5) / 0.8) * 900);
+  const k2 = ease((lt - 1.3) / 0.6);
+  document.getElementById("n2").textContent = Math.round(ease((lt - 1.3) / 0.8) * 6);
+  const k = ease((lt - 3.2) / 0.7);
+  const q = document.getElementById("s5q");
+  q.style.opacity = k; q.style.transform = `translateY(${(1-k)*40}px)`;
+}
+</script>
+</body>
+</html>

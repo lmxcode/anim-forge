@@ -1,0 +1,15 @@
+# 敏感内容一律不进仓库
+.env
+*.key
+config.json            # 只提交 config.example.json（config.json 可含私有参数）
+voice_meta.json
+voice/
+frames/
+output/
+bgm.wav
+*.mp3
+*.mp4
+*.wav
+probe*.png
+qc*.png
+__pycache__/

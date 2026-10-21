@@ -1,0 +1,53 @@
+{
+  "title": "demo",
+  "width": 1080,
+  "height": 1920,
+  "fps": 15,
+  "duration": 60,
+  "browser": "auto",
+  "cuts": [0, 5.2, 20, 34, 45, 55, 60],
+  "tts": {
+    "enabled": true,
+    "model": "speech-2.8-turbo",
+    "voice_id": "male-qn-qingse",
+    "speed": 1.25,
+    "volume": 3.0
+  },
+  "bgm": {
+    "chords": [
+      [110.00, 130.81, 164.81],
+      [87.31, 110.00, 130.81],
+      [130.81, 164.81, 196.00],
+      [98.00, 123.47, 146.83]
+    ],
+    "chord_step": 2.4,
+    "pad_amp_default": 0.085,
+    "beat": 0.6,
+    "sections": [
+      { "from": 5.2, "to": 20,   "pad_amp": 0.105, "kick_amp": 0.20, "hat": false },
+      { "from": 20,  "to": 34,   "pad_amp": 0.105, "kick_amp": 0.24, "hat": true },
+      { "from": 34,  "to": 45,   "pad_amp": 0.105, "kick_amp": 0.26, "hat": true },
+      { "from": 45,  "to": 55,   "pad_amp": 0.075, "kick_amp": 0.0,  "hat": false, "kick_period": 1.2, "kick_note": "heartbeat" }
+    ],
+    "clicks":  { "start": 6.0, "step": 1.6, "count": 5, "amp": 0.10 },
+    "impacts": [
+      { "t": 34.4, "amp": 0.22 },
+      { "t": 35.8, "amp": 0.16 },
+      { "t": 38.5, "amp": 0.12 },
+      { "t": 48.2, "amp": 0.14 },
+      { "t": 56.2, "amp": 0.26 }
+    ],
+    "risers": [
+      { "t": 19.0, "amp": 0.05 },
+      { "t": 33.0, "amp": 0.07 },
+      { "t": 44.0, "amp": 0.045 },
+      { "t": 54.0, "amp": 0.05 }
+    ],
+    "fade_out_at": 57.5
+  },
+  "mix": {
+    "bgm_volume": 0.25,
+    "voice_gain_db": 3.5,
+    "limiter": 0.95
+  }
+}
