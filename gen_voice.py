@@ -23,6 +23,7 @@ segments.json 格式（见 example/segments.json）:
 import argparse
 import json
 import os
+import sys
 import time
 import urllib.request
 from pathlib import Path

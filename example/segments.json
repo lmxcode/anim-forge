@@ -3,36 +3,54 @@
     "name": "S1_hook",
     "anchor": 0.6,
     "text": "把一篇长文，讲成六十秒。",
-    "window": [0, 5.2]
+    "window": [
+      0,
+      5.2
+    ]
   },
   {
     "name": "S2_time",
     "anchor": 5.6,
     "text": "整条流水线只要三步。先写时间轴，再逐帧渲染，最后一步合成声音和画面。",
-    "window": [5.2, 20]
+    "window": [
+      5.2,
+      20
+    ]
   },
   {
     "name": "S3_layer",
     "anchor": 20.3,
     "text": "画面是一个纯函数，同一个时间点，永远渲染出同一帧。改一幕，只需要重渲一幕。",
-    "window": [20, 34]
+    "window": [
+      20,
+      34
+    ]
   },
   {
     "name": "S4_cold",
     "anchor": 34.3,
     "text": "成本也要算清：手工剪一条要两小时，这条流水线只要二十五分钟，大部分还是挂机时间。",
-    "window": [34, 45]
+    "window": [
+      34,
+      45
+    ]
   },
   {
     "name": "S5_why",
     "anchor": 45.2,
     "text": "九百帧画面，六段口播，一个HTML文件，零剪辑软件。时间，是唯一的输入。",
-    "window": [45, 55]
+    "window": [
+      45,
+      55
+    ]
   },
   {
     "name": "S6_cta",
-    "anchor": 55.5,
+    "anchor": 55.0,
     "text": "开源在GitHub，搜anim forge。Star一个，造你的第一条。",
-    "window": [55, 60]
+    "window": [
+      55,
+      60
+    ]
   }
 ]

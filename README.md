@@ -27,6 +27,12 @@ mix_final.py            ← ffmpeg：帧序列 + BGM(0.25) + 口播(+3.5dB) → 
 | 版权 | 找素材 | BGM 是代码合成的，无版权风险 |
 | 局部重渲 | 不可能 | 删掉坏帧重渲即可 |
 
+## 成片效果
+
+<video src="docs/demo-60s.mp4" controls width="360"></video>
+
+[▶ 直接观看：demo-60s.mp4](docs/demo-60s.mp4) —— 本仓库 README 的示例配置一条命令跑出来的成片（60s / 1080×1920 / 2.2MB），口播与 BGM 全部代码合成。
+
 ## 快速开始
 
 ```bash
