@@ -17,6 +17,9 @@ render_frames.py        ← 无头 Edge/Chrome 逐帧截图（15fps × 900 帧�
 mix_final.py            ← ffmpeg：帧序列 + BGM(0.25) + 口播(+3.5dB) → final.mp4
 ```
 
+> 🔗 **技能包进化版**：[lmxcode/infocard-video](https://github.com/lmxcode/infocard-video) ——
+> 同一条流水线打包成 SKILL.md 技能包，agent 对话直接出片；并新增 retime 字幕锚点自动同步、TTS 自动记账两个升级。
+
 ## 为什么是代码渲染，不是剪辑
 
 | | 手工剪辑 | anim-forge |
